@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="stylesheet">
+	<link href="css/styles.css" rel="stylesheet">
+	<meta content="width= device-width, initial-scale=1" name="viewport">
+	<link href="https://fonts.googleapis.com/css?family=Acme&display=swap" rel="stylesheet"><!--Map box-->
+
+	<script src='https://api.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.js'>
+	</script>
+	<link href='https://api.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.css' rel='stylesheet'>
+	<link href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" rel="stylesheet">
+	<title>Restaurant Reviews</title>
+</head>
+<body>
+	<header>
+		<nav>
+			<br>
+			<h1><a href="/">Restaurant Reviews</a></h1>
+		</nav>
+	</header>
+	<main id="maincontent" role="application">
+		<section id="map-container">
+			<div aria-label="marking points" id="map"></div>
+		</section>
+		<section>
+			<div aria-label="filter-options" class="filter-options" tabindex="0">
+				<h2>Filter Results</h2><select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
+					<option value="all">
+						All Neighborhoods
+					</option>
+				</select> <label for="neighborhoods-select">n</label> <select id="cuisines-select" name="cuisines" onchange="updateRestaurants()">
+					<option value="all">
+						All Cuisines
+					</option>
+				</select> <label for="cuisines-select">c</label>
+			</div>
+			<ul aria-label="list of restaurants" id="restaurants-list" tabindex="0"></ul>
+		</section>
+	</main>
+	<script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js">
+	</script>
+	<script charset="utf-8" src="js/dbhelper.js" type="application/javascript">
+	</script>
+	<script charset="utf-8" src="js/main.js" type="application/javascript">
+	</script> <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&libraries=places&callback=initMap"></script> -->
+	<footer id="footer">
+		Copyright (c) 2017 <a href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
+	</footer>
+	<script>
+	 //service worker registration
+	 if ('serviceWorker' in navigator) {
+	   navigator.serviceWorker.register('serviceWorker.js').then(() => {
+	     console.log("serviceWorker Registered Successfully");
+	   }).catch((e) => {
+	     console.log(e.error);
+	   })
+
+	 }
+	</script>
+</body>
+</html>
