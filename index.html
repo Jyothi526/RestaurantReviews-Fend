@@ -19,8 +19,8 @@
 			<h1><a href="/">Restaurant Reviews</a></h1>
 		</nav>
 	</header>
-	<main id="maincontent" role="application">
-		<section id="map-container">
+	<main id="maincontent">
+		<section id="map-container" role="application">
 			<div aria-label="marking points" id="map"></div>
 		</section>
 		<section>
@@ -29,11 +29,14 @@
 					<option value="all">
 						All Neighborhoods
 					</option>
-				</select> <label for="neighborhoods-select">n</label> <select id="cuisines-select" name="cuisines" onchange="updateRestaurants()">
+				</select> 
+			<label for="neighborhoods-select">n</label> 
+				<select id="cuisines-select" name="cuisines" onchange="updateRestaurants()">
 					<option value="all">
 						All Cuisines
 					</option>
-				</select> <label for="cuisines-select">c</label>
+				</select> 
+				<label for="cuisines-select">c</label>
 			</div>
 			<ul aria-label="list of restaurants" id="restaurants-list" tabindex="0"></ul>
 		</section>
