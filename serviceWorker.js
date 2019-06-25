@@ -1,7 +1,8 @@
 //Installation
 self.addEventListener("install", (event) => {
 	event.waitUntil(caches.open("Example").then((cache) => {
-		return cache.addAll([]);
+		return cache.addAll([
+		]);
 	}))
 })
 // fetch
